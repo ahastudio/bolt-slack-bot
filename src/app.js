@@ -41,4 +41,15 @@ receiver.router.get('/say', async (req, res) => {
   res.send('OK');
 });
 
+receiver.router.get('/form', async (req, res) => {
+  res.send(`
+    <form action="/say">
+      <textarea type="text" name="message" rows="4" cols="40"></textarea>
+      <div>
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  `);
+});
+
 module.exports = app;
